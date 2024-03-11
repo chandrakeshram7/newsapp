@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 const apiKey = 'ddf13f29e2a7416eb9ee9e1a682e2de3'; // Replace with your updated NewsAPI API key
 const port = process.env.PORT || 3000
 app.use(express.json());
+const ejs = require('ejs');
 app.get('/', (req, res)=>{
     res.send("Hello ");
 })
@@ -26,7 +27,8 @@ app.get('/index', async (req, res) => {
             },
         });
     
-        res.json(response.data);
+        const newsData = response.data.articles;
+        res.render('index', { newsData });
     } catch (error) {
         console.error('Error:', error.message);
     }

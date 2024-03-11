@@ -1,13 +1,21 @@
+<!-- views/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>News Page</title>
 </head>
 <body>
-    <p>This is to verify setup
-        
-    </p>
+    <h1>Top Headlines in India</h1>
+    <ul>
+        <% newsData.forEach(article => { %>
+            <li>
+                <h3><%= article.title %></h3>
+                <p><%= article.description %></p>
+                <!-- Add more fields as needed -->
+            </li>
+        <% }); %>
+    </ul>
 </body>
 </html>
