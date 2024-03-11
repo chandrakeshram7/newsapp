@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 const apiKey = 'ddf13f29e2a7416eb9ee9e1a682e2de3'; // Replace with your updated NewsAPI API key
 const port = process.env.PORT || 3000
 app.use(express.json());
+const path = require('path');
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
 const view_path = path.join(__dirname,'./views');
