@@ -31,9 +31,9 @@ app.get('/index', async (req, res) => {
                 country: 'in', // Set the country code for India
             },
         });
-    
+        const name = "Chandrakesh";
         const newsData = response.data.articles;
-        res.render('index', { newsData });
+        res.render('index', { name, newsData });
     } catch (error) {
         console.error('Error:', error.message);
     }
