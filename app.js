@@ -11,6 +11,8 @@ const port = process.env.PORT || 3000
 app.use(express.json());
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
+const view_path = path.join(__dirname,'./views');
+app.use(express.static(view_path));
 app.get('/', (req, res)=>{
     res.send("Hello ");
 })
